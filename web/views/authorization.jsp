@@ -11,6 +11,15 @@
     <title>Авторизация</title>
 </head>
 <body>
-    Добрый вечер, я диспетчер, секса не будет, потому что я ебусь с лабами
+<form method="post">
+    <label>Логин:
+        <input type="text" name="name"><br />
+    </label>
+
+    <label>Пароль:
+        <input type="password" name="pass"><br />
+    </label>
+    <button type="submit">Подтвердить</button>
+</form>
 </body>
 </html>

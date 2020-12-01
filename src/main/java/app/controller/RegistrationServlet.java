@@ -1,6 +1,7 @@
 package app.controller;
 
 import app.beans.User;
+import app.dao.UserDAO;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -26,9 +27,17 @@ public class RegistrationServlet extends HttpServlet {
         PrintWriter writer = resp.getWriter();
         if (password.equals(repassword)) {
             User user = new User(name, password);
+            UserDAO userDAO = new UserDAO();
+            User test = userDAO.registerUser(user);
+            if (test.equals(user)) {
+                writer.println("success!");
+            }
+            else {
+                writer.println("problem");
+            }
         }
         else {
-            writer.println("huita ebana your passwords");
+            writer.println("problem");
         }
     }
 }
